@@ -1,67 +1,224 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="cs" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reverse RP | Vítejte v Los Santos</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-</head>
-<body>
+    <title>Mygul1n_ | Full-Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #000; color: #fff; }
+        .bento-card { background: #0a0a0a; border: 1px solid #1a1a1a; transition: all 0.3s ease; overflow: hidden; }
+        .bento-card:hover { border-color: #3b82f6; background: #0f0f0f; transform: translateY(-2px); }
+        
+        .stat-number { 
+            background: linear-gradient(180deg, #fff 0%, #3b82f6 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            font-weight: 700;
+        }
+        .img-overlay { background: linear-gradient(to bottom, transparent, #0a0a0a); }
 
-    <nav class="navbar">
-        <div class="logo">REVERSE<span>RP</span></div>
-        <ul class="nav-links">
-            <li><a href="#home">Domů</a></li>
-            <li><a href="#about">O nás</a></li>
-            <li><a href="#rules">Pravidla</a></li>
-            <li><a href="https://discord.gg/vas-odkaz" class="btn-discord">Discord</a></li>
-        </ul>
+        /* Discord Status Colors */
+        .status-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+        .online { background: #22c55e; box-shadow: 0 0 8px #22c55e; }
+        .dnd { background: #ef4444; box-shadow: 0 0 8px #ef4444; }
+        .idle { background: #f59e0b; box-shadow: 0 0 8px #f59e0b; }
+        .offline { background: #64748b; }
+    </style>
+</head>
+<body class="selection:bg-blue-500/30">
+
+    <nav class="fixed top-0 w-full z-50 py-6 px-8 md:px-24 flex justify-between items-center bg-black/80 backdrop-blur-md border-b border-white/5 text-white">
+        <div class="text-xl font-bold tracking-tighter flex items-center gap-3">
+            <img src="https://cdn.discordapp.com/attachments/1100383869624139888/1477355636403732601/image-removebg-preview_4.png?ex=69a47627&is=69a324a7&hm=cb84a8894d3d20e409c39b8efc4295a4082d26dc801441e3a5bee9e366239cb7&" 
+                 class="w-9 h-9 rounded-full object-cover border border-blue-500/50 shadow-lg shadow-blue-500/20">
+            MYGUL1N_
+        </div>
+        <div class="flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
+            <a href="#home" class="hover:text-blue-500 transition">Domů</a>
+            <a href="#projects" class="hover:text-blue-500 transition">Experience</a>
+            <a href="#skills" class="hover:text-blue-500 transition">Skills</a>
+            <a href="#contact" class="hover:text-blue-500 transition">Kontakt</a>
+        </div>
     </nav>
 
-    <header id="home" class="hero">
-        <div class="hero-content">
-            <h1>REVERSE <span class="highlight">ROLEPLAY</span></h1>
-            <p>Zažij novou úroveň realismu v srdci Los Santos. Tvůj příběh začíná právě teď.</p>
-            <div class="hero-btns">
-                <a href="fivem://connect/ip-serveru" class="btn-primary">HRAST TEĎ</a>
-                <a href="#about" class="btn-secondary">ZJISTIT VÍCE</a>
-            </div>
+    <section id="home" class="min-h-screen flex flex-col items-center justify-center pt-24 px-6 text-center">
+        <div class="mb-6 relative">
+            <div class="absolute inset-0 bg-blue-500 rounded-full blur-[120px] opacity-10"></div>
+            <img src="https://cdn.discordapp.com/attachments/1100383869624139888/1477355636403732601/image-removebg-preview_4.png?ex=69a47627&is=69a324a7&hm=cb84a8894d3d20e409c39b8efc4295a4082d26dc801441e3a5bee9e366239cb7&" 
+                 class="w-64 h-64 md:w-80 md:h-80 relative z-10 drop-shadow-[0_0_30px_rgba(59,130,246,0.1)] object-contain transition duration-500 hover:scale-105">
         </div>
-    </header>
+        <h1 class="text-6xl md:text-9xl font-bold tracking-tighter mb-2 italic text-white uppercase">MYGUL1N_</h1>
+        <p class="text-blue-500 font-bold tracking-[0.5em] uppercase text-sm mb-8 italic">Full-Stack Developer</p>
+        
+        <p class="max-w-xl text-slate-400 text-lg md:text-xl mb-10 leading-relaxed italic">
+            Věnuji se webům a FiveM scriptům. Sice jsem na začátku své cesty, ale zakládám si na tom, aby moje věci skvěle vypadaly a spolehlivě fungovaly.
+        </p>
 
-    <section id="about" class="container">
-        <h2 class="section-title">Proč hrát u nás?</h2>
-        <div class="features">
-            <div class="card">
-                <h3>Ekonomika</h3>
-                <p>Vyvážený ekonomický systém, kde má každá koruna svou váhu.</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-2xl border-t border-white/5 pt-12">
+            <div>
+                <div class="text-4xl stat-number">5</div>
+                <p class="text-[10px] text-slate-500 uppercase tracking-widest mt-2 font-bold italic">FiveM Serverů</p>
             </div>
-            <div class="card">
-                <h3>Vlastní Skripty</h3>
-                <p>Unikátní systémy pro frakce, drogy a legální práci.</p>
+            <div>
+                <div class="text-4xl stat-number">3</div>
+                <p class="text-[10px] text-slate-500 uppercase tracking-widest mt-2 font-bold italic">Weby</p>
             </div>
-            <div class="card">
-                <h3>Aktivní Admini</h3>
-                <p>Tým, který se stará o kvalitu RP a řeší problémy férově.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="rules" class="rules-section">
-        <div class="container">
-            <h2 class="section-title">Základní Pravidla</h2>
-            <div class="rules-list">
-                <div class="rule-item"><strong>1. Value Your Life:</strong> Važ si svého života jako v realitě.</div>
-                <div class="rule-item"><strong>2. Metagaming:</strong> Nepoužívej informace z OOC ve hře.</div>
-                <div class="rule-item"><strong>3. Powergaming:</strong> Nedělej věci, které jsou v reálu nemožné.</div>
+            <div>
+                <div class="text-4xl stat-number">24/7</div>
+                <p class="text-[10px] text-slate-500 uppercase tracking-widest mt-2 font-bold italic">Nasazení</p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Reverse RP. Všechna práva vyhrazena.</p>
+    <section id="projects" class="py-24 px-6 md:px-24 max-w-7xl mx-auto">
+        <h2 class="text-xs font-bold mb-10 tracking-[0.5em] text-blue-500 uppercase text-white italic">Projekty & Zkušenosti</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bento-card rounded-[2.5rem] flex flex-col">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://cdn.discordapp.com/attachments/1206956438556115045/1472662703188213930/ezgif-2f1cca736e9ce05d.gif?ex=69a3de45&is=69a28cc5&hm=767d01557823e9f99480624f89a811c2b4a4f4aed74c36a01e05c854a6274189&" class="w-full h-full object-cover opacity-60">
+                    <div class="absolute inset-0 img-overlay"></div>
+                </div>
+                <div class="p-10 -mt-12 relative z-10">
+                    <div class="flex justify-between items-center mb-6 text-white">
+                        <h3 class="text-4xl font-bold italic uppercase">Heaven RP</h3>
+                        <i data-lucide="crown" class="text-blue-500"></i>
+                    </div>
+                    <p class="text-slate-400 font-bold text-lg uppercase tracking-widest mb-4 italic">Majitel serveru & Head Developer</p>
+                    <p class="text-slate-500 text-sm italic">Vedení projektu a technická správa celého serveru.</p>
+                </div>
+            </div>
+
+            <div class="bento-card rounded-[2.5rem] flex flex-col justify-between">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-40">
+                    <div class="absolute inset-0 img-overlay"></div>
+                </div>
+                <div class="p-10 -mt-12 relative z-10 text-white">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-4xl font-bold italic uppercase">Mygulin Scripts</h3>
+                        <i data-lucide="code-2" class="text-blue-500"></i>
+                    </div>
+                    <p class="text-slate-400 font-bold text-lg uppercase tracking-widest mb-4 italic">Owner & Head Developer</p>
+                    <p class="text-slate-500 text-sm mb-8 italic">Tvorba FiveM scriptů pro PVP servery i RP.</p>
+                    <a href="https://github.com/MYGULIN-SCRIPTS" target="_blank" class="flex items-center gap-3 bg-white/5 hover:bg-white/10 w-fit px-6 py-3 rounded-xl transition font-bold group">
+                        <i data-lucide="github" class="w-5 h-5 group-hover:text-blue-500"></i>
+                        GitHub Repository
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24 px-6 md:px-24 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bento-card p-10 rounded-[2.5rem] md:col-span-2">
+                <h2 class="text-blue-500 font-bold mb-12 uppercase tracking-widest text-xs italic">Dovednosti</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-y-12">
+                    <div>
+                        <div class="text-4xl stat-number">70%</div>
+                        <p class="text-[10px] text-slate-500 uppercase mt-2 font-bold italic">LUA</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl stat-number">100%</div>
+                        <p class="text-[10px] text-slate-500 uppercase mt-2 font-bold italic">HTML</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl stat-number">100%</div>
+                        <p class="text-[10px] text-slate-500 uppercase mt-2 font-bold italic">CSS</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl stat-number">10%</div>
+                        <p class="text-[10px] text-slate-500 uppercase mt-2 font-bold italic">PY</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl stat-number">5%</div>
+                        <p class="text-[10px] text-slate-500 uppercase mt-2 font-bold italic">JS</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl stat-number">0%</div>
+                        <p class="text-[10px] text-slate-500 uppercase mt-2 font-bold italic">SQL</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bento-card p-10 rounded-[2.5rem] flex flex-col justify-center text-center">
+                <i data-lucide="package" class="w-10 h-10 text-blue-500 mx-auto mb-4"></i>
+                <h3 class="text-2xl font-bold italic mb-4 uppercase italic">Další dovednosti (FiveM)</h3>
+                <div class="text-slate-400 text-sm italic space-y-2">
+                    <p>Úprava textur EUP</p>
+                    <p>Úprava handlingu vozidel</p>
+                    <p>Úprava / Vytvoření liverky</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 px-6 md:px-24 max-w-5xl mx-auto text-center">
+        <h2 class="text-center text-5xl md:text-7xl font-bold mb-12 italic uppercase italic">Kontakt</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+            <a href="mailto:mygul@seznam.cz" class="bento-card p-8 rounded-3xl flex items-center gap-6 group">
+                <div class="w-14 h-14 bg-blue-600/10 rounded-2xl flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                    <i data-lucide="mail"></i>
+                </div>
+                <div class="text-left">
+                    <p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold italic">Email</p>
+                    <p class="text-lg font-bold">mygul@seznam.cz</p>
+                </div>
+            </a>
+
+            <div class="bento-card p-8 rounded-3xl flex items-center gap-6">
+                <div class="relative">
+                    <img id="discord-pfp" src="https://cdn.discordapp.com/attachments/1100383869624139888/1477355636403732601/image-removebg-preview_4.png" class="w-14 h-14 rounded-2xl object-cover bg-slate-900 border border-white/10">
+                    <div id="status-dot" class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full border-2 border-[#0a0a0a] offline"></div>
+                </div>
+                <div class="text-left">
+                    <p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold italic">Discord Status</p>
+                    <p class="text-lg font-bold">mygul1n_</p>
+                    <p id="discord-activity" class="text-[10px] text-slate-400 italic font-medium uppercase tracking-tighter">Zjišťuji...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center text-[10px] text-white/40 tracking-[0.5em] uppercase italic">
+        © 2026 MYGULIN-SCRIPTS • Všechna práva vyhrazena
     </footer>
 
+    <script>
+        lucide.createIcons();
+
+        // Lanyard API - Live Discord Status
+        const userId = "947135911907450931";
+        async function fetchStatus() {
+            try {
+                const response = await fetch(`https://api.lanyard.rest/v1/users/${userId}`);
+                const data = await response.json();
+                const { discord_status, activities, discord_user } = data.data;
+
+                // Update Status Dot
+                const dot = document.getElementById('status-dot');
+                dot.className = `absolute -bottom-1 -right-1 w-4 h-4 rounded-full border-2 border-[#0a0a0a] ${discord_status}`;
+
+                // Update Activity Text
+                const activityText = document.getElementById('discord-activity');
+                if (activities.length > 0) {
+                    const act = activities.find(a => a.type === 0) || activities[0];
+                    activityText.innerText = `Právě dělá: ${act.name}`;
+                } else {
+                    activityText.innerText = discord_status === 'offline' ? 'Aktuálně spí...' : 'Online (nic nedělá)';
+                }
+
+                // Update PFP if you want it live too
+                if (discord_user.avatar) {
+                    document.getElementById('discord-pfp').src = `https://cdn.discordapp.com/avatars/${userId}/${discord_user.avatar}.png`;
+                }
+            } catch (e) { console.error(e); }
+        }
+        setInterval(fetchStatus, 15000);
+        fetchStatus();
+    </script>
 </body>
 </html>
